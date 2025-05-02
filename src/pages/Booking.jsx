@@ -16,7 +16,7 @@ const Booking = () => {
     <div>
       <h2>Бронювання квитків на "{movie.title}"</h2>
       <p>Сеанс: {movie.showtime}</p>
-      <CinemaHall />
+      <CinemaHall movieId={parseInt(id)} />
     </div>
   );
 };
