@@ -1,27 +1,20 @@
-import React, { useState } from 'react';
-import MovieList from './components/MovieList';
-import movies from './data/movies';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Booking from './pages/Booking';
 import './App.css';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const filteredMovies = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
-    <div className="app">
-      <h1>Кінотеатр</h1>
-      <input
-        type="text"
-        placeholder="Пошук за назвою фільму..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="search-input"
-      />
-      <MovieList movies={filteredMovies} />
-    </div>
+    <Router>
+      <div className="app">
+        <h1>Кінотеатр</h1>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booking/:id" element={<Booking />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
