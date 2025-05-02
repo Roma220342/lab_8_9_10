@@ -35,7 +35,7 @@
     margin: 0;
   }
   
-  /movie-description {
+  .movie-description {
     font-size: 0.95rem;
     color: #555;
     line-height: 1.4;
