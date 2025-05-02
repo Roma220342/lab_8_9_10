@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './CinemaHall.css';
-
+import './csss/CinemaHall.css'; 
 const CinemaHall = () => {
   // Імітація місць у залі (5 рядів, 10 місць у кожному)
   const initialSeats = Array(5)
